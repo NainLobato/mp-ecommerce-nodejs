@@ -47,24 +47,22 @@ const mapPreference = (title, price, img, url) => ({
         ],
         installments: 6
     },
-    // external_reference: 'nain.lobato.g@gmail.com'
+    external_reference: 'nain.lobato.g@gmail.com',
     auto_return: 'approved',
     back_urls: {
         success: `${url}/success`,
         pending: `${url}/pending`,
         failure: `${url}/failure`,
     },
+    notification_url: `${url}/notify`,
   });
   
   const createPreferences = (title, price, img, url) => {
     const preference = mapPreference(title, price, img, url);
-    mercadopago.preferences.create(preference)
-    .then(function(response){
-        console.log(response.body)
-    // Este valor reemplazará el string "<%= global.id %>" en tu HTML
-      global.id = response.body.id;
-    }).catch(function(error){
-      console.log(error);
+    return mercadopago.preferences.create(preference)
+    .then((response) => response.body)
+    .catch(function(error){
+        console.log(error);
     });
   }
 

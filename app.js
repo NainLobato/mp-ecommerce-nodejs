@@ -26,6 +26,7 @@ app.post("/checkout", async function (req, res) {
     const url = `${req.protocol}://${req.get("Host")}`;
     const { title, price, img } = req.body;
     const body = await createPreferences(title, price, img, url);
+    console.log(`preference-id: ${body.id}`);
     res.redirect(body.init_point);
 });
 

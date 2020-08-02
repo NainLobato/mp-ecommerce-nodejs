@@ -13,7 +13,7 @@ const mapPreference = (title, price, img, url) => ({
       {
         id: '1234',
         title,
-        description: '“Dispositivo móvil de Tienda e-commerce',
+        description: 'Dispositivo móvil de Tienda e-commerce',
         unit_price: parseInt(price, 10),
         quantity: 1,
         currency_id: 'MXN',

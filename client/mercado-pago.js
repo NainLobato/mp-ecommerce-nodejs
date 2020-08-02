@@ -11,7 +11,7 @@ mercadopago.configure({
 const mapPreference = (title, price, img, url) => ({
     items: [
       {
-        id: 1234,
+        id: '1234',
         title,
         description: '“Dispositivo móvil de Tienda e-commerce',
         unit_price: parseInt(price, 10),
@@ -50,11 +50,11 @@ const mapPreference = (title, price, img, url) => ({
     external_reference: 'nain.lobato.g@gmail.com',
     auto_return: 'approved',
     back_urls: {
-        success: `${url}/success`,
-        pending: `${url}/pending`,
-        failure: `${url}/failure`,
+        success: `https://nainlobato-mp-ecommerce-nodejs.herokuapp.com/success`,
+        pending: `https://nainlobato-mp-ecommerce-nodejs.herokuapp.com/pending`,
+        failure: `https://nainlobato-mp-ecommerce-nodejs.herokuapp.com/failure`,
     },
-    notification_url: `${url}/notify`,
+    notification_url: `https://nainlobato-mp-ecommerce-nodejs.herokuapp.com/notify`,
   });
   
   const createPreferences = (title, price, img, url) => {
